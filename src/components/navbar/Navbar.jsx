@@ -1,6 +1,7 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
-
+import styles from './page.module.css'
 const Links = [
     {
         id: 1,
@@ -19,13 +20,13 @@ const Links = [
     },
     {
         id: 4,
-        title: 'About',
-        url:   '/about'
+        title: 'Sobre',
+        url:   '/sobre'
     },
     {
         id: 5,
-        title: 'Contact',
-        url:   '/contact'
+        title: 'Contato',
+        url:   '/contato'
     },
     {
         id: 6,
@@ -36,14 +37,20 @@ const Links = [
 
 const Navbar = () => {
   return (
-    <div>
-        <Link href='/'>Cleber</Link>
-        <div>
+    <div className={styles.container}>
+        <Link href='/' className={styles.logo}>Cleber</Link>
+        <div className={styles.links}>
          {Links.map((link)=> (
-            <Link key={link.id} href={link.url}>
+            <Link key={link.id} href={link.url} className={styles.link}>
                 {link.title}
             </Link>
-         ))}   
+         ))}
+         <button
+          className={styles.logout}
+          onClick={() => {
+           console.log('logged')
+            }}
+         >Logout</button>   
         </div>    
     </div>
   )

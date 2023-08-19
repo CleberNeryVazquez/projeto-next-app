@@ -1,0 +1,11 @@
+.container{
+    height: 50px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;    
+}
+.social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
