@@ -35,3 +35,7 @@
     font-size: 40px;
     font-weight: bold;
 }
+
+.item:hover .title{
+    color: #53c28b;
+}
