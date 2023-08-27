@@ -4,7 +4,7 @@ import Image from 'next/image'
 import {notFound} from 'next/navigation'
 
 async function getData(id) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,{
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`,{
     cache: "no-store",
   });
   if (!res.ok) {
@@ -21,21 +21,19 @@ const BlogPost = async ({params}) => {
       <div className={styles.top}>
         <div className={styles.info}>
           <h1 className={styles.title}>{data.title}</h1>
-          <p className={styles.desc}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque repudiandae maiores quibusdam veniam ipsa et sunt incidunt, autem suscipit voluptatibus. Cumque aspernatur sunt, culpa cum dicta laboriosam doloribus nihil.</p>
+          <p className={styles.desc}>{data.desc}</p>
           <div className={styles.autor}>
-            <Image src='' alt='' width={40} height={40} className={styles.avatar} />
-            <span className={styles.username}>Janet Vazquez</span>
+            <Image src={data.img} alt='' width={40} height={40} className={styles.avatar} />
+            <span className={styles.username}>{data.username}</span>
           </div>
         </div>
         <div className={styles.imageContainer}>
-          <Image src='' alt='' fill={true} className={styles.image} />
+          <Image src={data.img} alt='' fill={true} className={styles.image} />
         </div>
       </div>
       <div className={styles.content}>
         <p className={styles.text}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quis magni architecto aut alias officia, ut quod vel exercitationem esse ipsa soluta maxime obcaecati error facilis eius nihil, impedit voluptates. <br />
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque fuga tempore nulla a assumenda quisquam molestiae ad distinctio soluta aspernatur. Laudantium nemo voluptate sunt dolore, commodi quae tempore explicabo voluptatum! <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates eligendi vel repellat aut quis incidunt dolorem fugiat aliquid distinctio iste! Voluptatem hic odit dolores consequuntur, saepe ab praesentium sed facere!
+          {data.content}
         </p>
       </div>
     </div>
