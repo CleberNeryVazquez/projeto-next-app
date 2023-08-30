@@ -1,2 +1,37 @@
 .container{
 }
+
+
+
+
+
+
+
+
+/* loader animaçao */
+.loader-container {
+    width: 200px;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.loader {
+    width: 0;
+    height: 100%;
+    background-color: #3498db;
+    animation: loading 3s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
