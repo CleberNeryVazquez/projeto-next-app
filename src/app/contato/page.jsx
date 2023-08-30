@@ -2,6 +2,13 @@ import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import Button from '@/components/Button/Button'
+
+
+export const metadata = {
+  title: 'Contato',/* este é o titulo da aba de navegacao */
+  description: 'Pagina de contato',
+}
+
 const Contato = () => {
   return (
     <div className={styles.container}>

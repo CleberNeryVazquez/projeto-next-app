@@ -7,7 +7,6 @@ import { notFound } from 'next/navigation'
 
 const getData = (cat) => { /* aqui o cat é a categoria que esta em um array no data.js */
   const data = items[cat] 
-  console.log(data)
   if(data) {
     return data
   }
@@ -15,7 +14,6 @@ const getData = (cat) => { /* aqui o cat é a categoria que esta em um array no 
 }
 const Category = ({params}) => {
   const data = getData(params.category) /*  este category é o nome da pasta [category] dentro de portfolio  */
-  console.log(params)
   return (
     <div className={styles.container}>
       <h1 className={styles.catTitle}>{params.category}</h1>

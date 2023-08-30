@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 import styles from './page.module.css'
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle'
+
 const Links = [
     {
         id: 1,
