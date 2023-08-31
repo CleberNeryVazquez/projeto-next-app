@@ -14,3 +14,16 @@ export const GET = async (request, {params}) => {
     }
   
 };
+
+export const DELETE = async (request, {params}) => {
+    const {id} = params;
+    try {
+        await connect()
+        await Post.findByIdAndDelete(id)
+        return new NextResponse("Post deletado com sucesso",{ status: 200 });
+
+    } catch (err) {
+        return new NextResponse('Erro na base de dados',{ status: 500 });
+    }
+  
+};
